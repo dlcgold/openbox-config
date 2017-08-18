@@ -16,4 +16,4 @@ This is the result
 
 [Screenshot](screenshot.png)!!!
 
-Feel free to use the config and have fun with this amazing wm!# openbox-config
+Feel free to use the config and have fun with this amazing wm!
