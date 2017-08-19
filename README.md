@@ -12,8 +12,8 @@ Many themes come from the amazing distro called **ARCHlabs**.
 
 **Wallpaper** is founded in the web!
 
-This is the result
+This is the result [Screenshot](screenshot.png)!!!
 
-[Screenshot](screenshot.png)!!!
+**Zsh-theme** is: __Powerlevel9k__ [screenshot](terminal-openbox.png)
 
 Feel free to use the config and have fun with this amazing wm!
