@@ -12,7 +12,7 @@ Many themes come from the amazing distro called **ARCHlabs**.
 
 **Wallpaper** is founded in the web!
 
-This is the result [Screenshot2](screenshot2.png)!!!
+This is the result [Screenshot](Screenshot.png)!!!
 
 **Zsh-theme** is: __Powerlevel9k__ [screenshot](terminal-openbox.png)
 

@@ -56,15 +56,15 @@ conky.config = {
 	alignment = 'middle_left',
 	
 	--gap_x = -1910,
-	gap_x = 5,
+	gap_x = 15,
 	gap_y = 5,
-	minimum_height = 768,
-	minimum_width = 240,
-	maximum_width = 240,
+	
+	minimum_width = 248,
+	maximum_width = 248,
 
 	--Graphical
 
-	border_inner_margin = 10, 					-- margin between border and text
+	border_inner_margin = 5, 					-- margin between border and text
 	border_outer_margin = 1, 					-- margin between border and edge of window
 	border_width = 0, 							-- border width in pixels
 	default_bar_width = 280,
@@ -100,7 +100,7 @@ conky.config = {
 	--Windows
 
 	own_window = true,
-	own_window_argb_value = 150,
+	own_window_argb_value = 110,
 	own_window_argb_visual = true,
 	own_window_class = 'Conky',
 	own_window_colour = '#000000',
@@ -113,10 +113,10 @@ conky.config = {
 	--Colours
 
 	default_color = '#FFFFFF',  				-- default color and border color
-	color1 = '#00E1CF', 
-	color2 = '#009C81', 
-	color3 = '#009C81', 
-	color4 = '#00E1CF',
+	color1 = '#0078FF', 
+	color2 = '#7EE2FF', 
+	color3 = '#0078FF', 
+	color4 = '#7EE2FF',
 	color5 = '#CCCCCC', 
 	color6 = '#FFFFFF',
 
@@ -133,54 +133,49 @@ conky.config = {
 
 
 conky.text = [[
-${goto 12}+-----------------------------------------------------------+
-${goto 15}|${goto 38}+-- ${color2}Node ${goto 155}${color4}${nodename}${font}${color}
-${goto 15}|${goto 38}+-- ${color2}Os${goto 155}${color4}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${color}
-${goto 15}|${goto 38}+-- ${color2}Version${goto 155}${color4}${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
-${goto 15}|${goto 38}+-- ${color2}Kernel ${goto 155}${color4}${kernel}${color}
-${goto 15}|
+${goto 12}${color2}+-----------------------------------------------------------+
+${goto 12}${color1}+----Info ${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Node ${goto 155}${color4}${nodename}${font}${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Os${goto 155}${color4}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Kernel ${goto 155}${color4}${kernel}${color}
+${goto 15}${color2}|
 ${goto 12}${color1}+----Memory ${color}
-${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+-- ${color2}Total${goto 155}${color4}${memmax}${color}
-${goto 15}|${goto 38}+-- ${color2}In Use${goto 155}${color4}${mem} ${color1}(${memperc}%)${color}
-${goto 15}|${goto 38}+-- ${color2}Free${goto 155}${color4}${memfree}${color}
-${goto 15}|${goto 38}+-- ${color2}Up to${goto 155}${color4}${memeasyfree}${color}
-${goto 15}|
+${goto 15}${color2}|${goto 40}|
+${goto 15}${color2}|${goto 38}+-- ${color2}Total${goto 155}${color4}${memmax}${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}In Use${goto 155}${color4}${mem} ${color2}(${memperc}%)${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Free${goto 155}${color4}${memfree}${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Up to${goto 155}${color4}${memeasyfree}${color}
+${goto 15}${color2}|
 ${goto 12}${color1}+----Status${color}
-${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+-- ${color2}Cpu${goto 155}${color1}${cpu cpu0}% ${color4}- ${freq_g}GHz${color}
-${goto 15}|${goto 38}+-- ${color2}Temp${goto 155}${color1}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}${color}
-${goto 15}|${goto 38}+-- ${color2}Disk${goto 155}${color4}${fs_used_perc /}% Used${color}
-${goto 15}|${goto 38}+-- ${color2}Diskio ${goto 155}${color4}${diskio}${color}
-${goto 15}|${goto 60}+-- ${color3}Read${goto 155}${color4}${diskio_read}${color}
-${goto 15}|${goto 60}+-- ${color3}Write${goto 155}${color4}${diskio_write}${color}
-${goto 15}|
+${goto 15}${color2}|${goto 40}|
+${goto 15}${color2}|${goto 38}+-- ${color2}Cpu${goto 155}${color2}${cpu cpu0}% ${color2}- ${freq_g}GHz${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Temp${goto 155}${color2}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Disk${goto 155}${color4}${fs_used_perc /}% Used${color}
+${goto 15}${color2}|${goto 38}+-- ${color2}Diskio ${goto 155}${color4}${diskio}${color}
+${goto 15}${color2}|${goto 60}+-- ${color3}Read${goto 155}${color4}${diskio_read}${color}
+${goto 15}${color2}|${goto 60}+-- ${color3}Write${goto 155}${color4}${diskio_write}${color}
+${goto 15}${color2}|
 ${goto 12}${color1}+----Storage ${color}
-${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+-- ${color2}Root${goto 155}${color4}${fs_free /} / ${fs_size /}
-${goto 15}|
+${goto 15}${color2}|${goto 40}|
+${goto 15}${color2}|${goto 38}+-- ${color2}Root${goto 155}${color4}${fs_free /} / ${fs_size /}
+${goto 15}${color2}|
 ${goto 12}${color1}+----Processes ${color}
-${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+-- ${color2}Total${goto 155}${color4}${processes}${color}
-${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+-- ${color2}Processes        ${color2}   Cpu ${color2}  Ram${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 1}${goto 155}${color4}${top cpu 1}${top mem 1}${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 2}${goto 155}${color4}${top cpu 2}${top mem 2}${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 3}${goto 155}${color4}${top cpu 3}${top mem 3}${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 4}${goto 155}${color4}${top cpu 4}${top mem 4}${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 5}${goto 155}${color4}${top cpu 5}${top mem 5}${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 6}${goto 155}${color4}${top cpu 6}${top mem 6}${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 7}${goto 155}${color4}${top cpu 7}${top mem 7}${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}${top name 8}${goto 155}${color4}${top cpu 8}${top mem 8}${color}
-${goto 15}|
+${goto 15}${color2}|${goto 40}|
+${goto 15}${color2}|${goto 38}+-- ${color2}Total${goto 155}${color4}${processes}${color}
+${goto 15}${color2}|${goto 40}|
+${goto 15}${color2}|${goto 38}+-- ${color2}Processes        ${color2}   Cpu ${color2}  Ram${color}
+${goto 15}${color2}|${goto 40}|${goto 60}+-- ${color3}${top name 1}${goto 155}${color4}${top cpu 1}${top mem 1}${color}
+${goto 15}${color2}|${goto 40}|${goto 60}+-- ${color3}${top name 2}${goto 155}${color4}${top cpu 2}${top mem 2}${color}
+${goto 15}${color2}|${goto 40}|${goto 60}+-- ${color3}${top name 3}${goto 155}${color4}${top cpu 3}${top mem 3}${color}
+${goto 15}${color2}|${goto 40}|${goto 60}+-- ${color3}${top name 4}${goto 155}${color4}${top cpu 4}${top mem 4}${color}
+${goto 15}${color2}|
 ${goto 12}${color1}+----Wireless ${color}
-${goto 15}|${goto 40}|
+${goto 15}${color2}|${goto 40}|
 #${goto 15}|${goto 38}+-- ${color2}Ip${goto 155}${addr wlp4s0}${color}
-${goto 15}|${goto 38}+-- ${color2}Up${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${upspeedf wlp4s0}KB${color}
-${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+-- ${color2}Down${color}
-${goto 15}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${downspeedf wlp4s0}KB${color}
-${goto 12}+-----------------------------------------------------------+
-
+${goto 15}${color2}|${goto 38}+-- ${color2}Up${color}
+${goto 15}${color2}|${goto 40}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${upspeedf wlp4s0}KB${color}
+${goto 15}${color2}|${goto 40}|
+${goto 15}${color2}|${goto 38}+-- ${color2}Down${color}
+${goto 15}${color2}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${downspeedf wlp4s0}KB${color}
+${goto 12}${color2}+-----------------------------------------------------------+
 ]]
